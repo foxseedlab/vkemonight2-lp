@@ -66,6 +66,17 @@
           }
         }
       }
+    },
+    // Tailwind CSS の @theme や @apply を無視
+    {
+      "includes": ["**/*.css"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noUnknownAtRules": "off"
+          }
+        }
+      }
     }
   ]
 }
