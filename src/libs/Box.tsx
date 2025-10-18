@@ -1,4 +1,4 @@
-import { recommendAvatarSrc, recommendStillSrc } from './imgix/image';
+import { recommendAvatarSrc } from './imgix/image';
 
 export function BeveledRectangleBox({
   width,

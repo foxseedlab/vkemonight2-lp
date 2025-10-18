@@ -32,7 +32,7 @@ export default function Header1({
         }
       >
         <div
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: CMSから取得した信頼できるHTMLコンテンツのため使用
           dangerouslySetInnerHTML={{ __html: title }}
         />
       </TextFade>
@@ -87,7 +87,7 @@ function HorizontalWave({ right }: { right: boolean }) {
 
       {Array.from({ length: waveNum }).map((_, index) => (
         <div
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: 静的な装飾要素のため配列インデックスをキーとして使用
           key={index}
           className={
             right
@@ -113,7 +113,7 @@ function DotPattern() {
       {Array.from({ length: 12 }).flatMap((_, y) =>
         Array.from({ length: 12 }).map((_, x) => (
           <circle
-            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+            // biome-ignore lint/suspicious/noArrayIndexKey: 静的なドットパターンのため配列インデックスをキーとして使用
             key={`dot-${x}-${y}`}
             cx={x + 0.5}
             cy={y + 0.5}

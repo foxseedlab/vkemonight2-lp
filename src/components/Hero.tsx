@@ -42,6 +42,7 @@ export default function Hero({ assets }: Props) {
   };
 
   return (
+    // biome-ignore lint/correctness/useUniqueElementIds: ページ内で単一のヒーローセクションのみ使用されるため固定IDで問題なし
     <section
       className="w-full h-[calc(100svh+200px)] text-center mask-contain mask-repeat-x flex flex-col items-center relative"
       style={{

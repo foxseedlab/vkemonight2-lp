@@ -19,7 +19,7 @@ export function ParagraphWithLineBreak({
   return (
     <p
       className={`tracking-wide leading-10 ${className}`}
-      // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: 改行を<br>に変換するためHTMLとして挿入
       dangerouslySetInnerHTML={{ __html: text.replace('\n', '<br>') }}
     />
   );

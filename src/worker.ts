@@ -37,11 +37,7 @@ const createExports = (manifest: Parameters<typeof createAstroExports>[0]) => {
   const originalFetch = astroExports.default.fetch.bind(astroExports.default);
 
   // Astro のfetchハンドラにBasic認証を追加
-  const fetch = async (
-    request: Request,
-    env: Env,
-    ctx: ExecutionContext,
-  ) => {
+  const fetch = async (request: Request, env: Env, ctx: ExecutionContext) => {
     const expectedAuthorizationHeader = createExpectedAuthorizationHeader(
       env.BASIC_AUTH_USER,
       env.BASIC_AUTH_PASSWORD,

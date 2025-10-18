@@ -29,7 +29,7 @@ export function TextStaggeredFade({
     >
       {letters.map((letter, i) => (
         <motion.span
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: アニメーションのため配列インデックスをキーとして使用
           key={`letter-${letter}-${i}`}
           variants={variants}
           custom={i}

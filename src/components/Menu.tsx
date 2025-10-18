@@ -247,6 +247,7 @@ function MobileMenu({
               onClick={handleMenuToggle}
               aria-hidden="true"
             />
+            {/* biome-ignore lint/correctness/useUniqueElementIds: モバイルメニューは単一インスタンスのみ使用されるため固定IDで問題なし */}
             <motion.div
               id="mobile-menu"
               initial={{ x: '100%' }}
@@ -259,7 +260,7 @@ function MobileMenu({
               <div className="flex-grow flex items-center justify-center">
                 <ul className="flex flex-col items-center space-y-6 px-8 py-6">
                   <li className="w-full mb-24">
-                    {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+                    {/* biome-ignore lint/a11y/useValidAnchor: アンカーリンクとして機能するためhref属性が必要 */}
                     <a
                       href="#hero"
                       className="w-full appearance-none bg-transparent border-none cursor-pointer p-0"

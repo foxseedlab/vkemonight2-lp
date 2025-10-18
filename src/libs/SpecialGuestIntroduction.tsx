@@ -53,7 +53,7 @@ export default function SpecialGuestIntroductions({ guests, assets }: Props) {
           className="mt-[6rem] w-full relative"
         >
           <SpecialGuestIntroduction
-            // biome-ignore lint/style/noNonNullAssertion: <explanation>
+            // biome-ignore lint/style/noNonNullAssertion: スペシャルゲストには必ずstill_photographyが存在する前提
             stillPhotographyUrl={guest.still_photography!.url}
             name={guest.name}
             positions={guest.positions}

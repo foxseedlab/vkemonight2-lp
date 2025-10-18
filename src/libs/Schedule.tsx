@@ -169,11 +169,3 @@ function DJ({
     </div>
   );
 }
-
-function ComingSoonSchedule() {
-  return (
-    <li className="text-center font-display outlined-text-shadow-1dot5xs text-shadow-current">
-      coming soon...
-    </li>
-  );
-}

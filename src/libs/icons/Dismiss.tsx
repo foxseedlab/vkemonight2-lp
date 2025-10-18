@@ -1,6 +1,6 @@
 export default function Dismiss() {
   return (
-    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+    // biome-ignore lint/a11y/noSvgWithoutTitle: ボタン内のアイコンとして使用されaria-labelで説明されるためtitle不要
     <svg
       width="24"
       height="24"

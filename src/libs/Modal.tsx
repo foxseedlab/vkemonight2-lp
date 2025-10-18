@@ -67,6 +67,7 @@ export default function Modal({
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
               <div className="flex flex-row justify-between">
+                {/* biome-ignore lint/correctness/useUniqueElementIds: モーダルは一度に1つしか表示されないため固定IDで問題なし */}
                 <h3
                   id="modal-title"
                   className="pt-5 text-2xl text-white font-bold"
