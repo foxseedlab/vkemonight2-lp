@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { BeveledRectangleFigure } from './Box';
 import type { Person } from './stores/people';
@@ -32,7 +32,10 @@ export default function Schedule({ djSchedules }: Props) {
 function ScheduleTimeAndTitle({
   startAtStr,
   title,
-}: { startAtStr: string; title: string }) {
+}: {
+  startAtStr: string;
+  title: string;
+}) {
   return (
     <h2 className="text-xl font-medium leading-14 flex flex-row">
       <div
@@ -50,7 +53,10 @@ function ScheduleTimeAndTitle({
 function NormalSchedule({
   startAtStr,
   title,
-}: { startAtStr: string; title: string }) {
+}: {
+  startAtStr: string;
+  title: string;
+}) {
   return (
     <li className="bg-primary">
       <ScheduleTimeAndTitle startAtStr={startAtStr} title={title} />
@@ -62,7 +68,11 @@ function DJSchedule({
   startAtStr,
   title,
   djSchedules,
-}: { startAtStr: string; title: string; djSchedules: ScheduleStore[] }) {
+}: {
+  startAtStr: string;
+  title: string;
+  djSchedules: ScheduleStore[];
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 

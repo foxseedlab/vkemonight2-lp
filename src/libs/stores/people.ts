@@ -1,4 +1,4 @@
-import { type Image, createCMSClient } from './init';
+import { createCMSClient, type Image } from './init';
 
 export type Person = {
   id: string;

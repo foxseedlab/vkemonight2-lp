@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import sendGAEvent from './analytics/google';
 import { recommendTicketSrc } from './imgix/image';
 import type { Assets } from './stores/assets';

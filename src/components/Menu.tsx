@@ -1,8 +1,8 @@
-import sendGAEvent from '@/libs/analytics/google';
-import type { Assets } from '@/libs/stores/assets';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useWindowScroll } from 'react-use';
+import sendGAEvent from '@/libs/analytics/google';
+import type { Assets } from '@/libs/stores/assets';
 
 type Section = {
   id: string;

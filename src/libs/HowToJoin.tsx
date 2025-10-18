@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import YouTube from 'react-youtube';
-import Modal from './Modal';
 import PrimaryButton, { PrimaryButtonWithEvent } from './buttons/PrimaryButton';
+import Modal from './Modal';
 
 export default function HowToJoin() {
   const [isModalOpen, setIsModalOpen] = useState(false);

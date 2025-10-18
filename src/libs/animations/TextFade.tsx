@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import * as React from 'react';
 
 export function TextFade({

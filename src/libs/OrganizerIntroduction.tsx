@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useMeasure } from 'react-use';
 import { BeveledRectangleBox, BeveledRectangleFigure } from './Box';
 import { RightAngledIsoscelesTriangleCorner } from './Corner';
+import { ParagraphWithLineBreak } from './headers/Paragraph';
 import Position from './Position';
 import Social from './Social';
-import { ParagraphWithLineBreak } from './headers/Paragraph';
 import type { Assets } from './stores/assets';
 import type { Person, PositionType, SocialLink } from './stores/people';
 

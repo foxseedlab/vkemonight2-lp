@@ -1,12 +1,11 @@
 ---
+import { SEO } from 'astro-seo';
 import Footer from '@/components/Footer.astro';
+import Menu from '@/components/Menu';
 import SplashScreen from '@/components/SplashScreen.astro';
 import StructuredData from '@/components/StructuredData.astro';
-
-import Menu from '@/components/Menu';
 import type { Assets } from '@/libs/stores/assets';
 import type { Person } from '@/libs/stores/people';
-import { SEO } from 'astro-seo';
 import Font from './Font.astro';
 import GoogleAnalytics from './GoogleAnalytics.astro';
 
@@ -24,8 +23,8 @@ const {
   title = 'バーチャルケモナイト | バーチャルからお送りする夜のDJイベント',
   description = 'バーチャルケモナイトは、7月12日にVRChatで開催されるオールナイトのDJイベントです。',
   xSite = '@KEMO_INTHE_DARK',
-  noindex = false,
-  nofollow = false,
+  noindex = true,
+  nofollow = true,
   assets,
   performers,
 } = Astro.props;
