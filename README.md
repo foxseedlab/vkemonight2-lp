@@ -33,7 +33,6 @@ wrangler secret put MICROCMS_SERVICE_DOMAIN
 wrangler secret put MICROCMS_API_KEY
 
 # Google Analytics関連
-wrangler secret put PUBLIC_GOOGLE_SITE_VERIFICATION
 wrangler secret put PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID
 
 # Basic認証（必要な場合）
