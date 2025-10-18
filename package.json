@@ -6,6 +6,8 @@
     "astro": "astro",
     "build": "astro build",
     "cf-typegen": "wrangler types",
+    "lint": "biome lint .",
+    "format": "biome format . --write",
     "check": "astro build && tsc && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
     "dev": "astro dev",
