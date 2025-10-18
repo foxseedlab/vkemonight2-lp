@@ -1,4 +1,13 @@
 ---
+import About from '@/components/About.astro';
+import Contact from '@/components/Contact.astro';
+import Contribute from '@/components/Contribute.astro';
+import FAQStructuredData from '@/components/FAQStructuredData.astro';
+import Guests from '@/components/Guests.astro';
+import Hero from '@/components/Hero';
+import Staffs from '@/components/Staffs.astro';
+import TimeSchedule from '@/components/TimeSchedule.astro';
+import BaseLayout from '@/layouts/Base.astro';
 import { fetchAssets } from '@/libs/stores/assets';
 import {
   fetchGuestsWithoutSpecial,
@@ -9,18 +18,10 @@ import {
 } from '@/libs/stores/people';
 import { fetchDJSchedules } from '@/libs/stores/schedules';
 
-import BaseLayout from '@/layouts/Base.astro';
-
-import About from '@/components/About.astro';
-import Contact from '@/components/Contact.astro';
-import Contribute from '@/components/Contribute.astro';
-import FAQStructuredData from '@/components/FAQStructuredData.astro';
-import Guests from '@/components/Guests.astro';
-import Hero from '@/components/Hero';
-import Staffs from '@/components/Staffs.astro';
-import TimeSchedule from '@/components/TimeSchedule.astro';
-
 import '@/styles/global.css';
+
+// Basic認証を有効にするために prerender を無効化
+export const prerender = false;
 
 const assets = await fetchAssets();
 const specialGuests = await fetchSpecialGuests();

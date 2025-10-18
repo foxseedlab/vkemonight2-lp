@@ -1,24 +1,17 @@
-import tailwindcss from '@tailwindcss/vite';
-// @ts-check
-import { defineConfig } from 'astro/config';
-import { cjsInterop } from 'vite-plugin-cjs-interop';
-
+import cloudflare from '@astrojs/cloudflare';
 import partytown from '@astrojs/partytown';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
+// @ts-check
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://vkemonight.pages.dev',
+  site: 'https://vkemonight2.kemoin.com',
 
   vite: {
-    plugins: [
-      tailwindcss(),
-      cjsInterop({
-        // List of CJS dependencies that require interop
-        dependencies: ['react-use'],
-      }),
-    ],
+    plugins: [tailwindcss()],
 
     build: {
       minify: 'terser',
@@ -34,14 +27,18 @@ export default defineConfig({
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react-dom'],
-            'ui-vendor': ['framer-motion'],
+            'ui-vendor': ['motion/react'],
           },
         },
       },
     },
 
     optimizeDeps: {
-      include: ['react', 'react-dom', 'framer-motion'],
+      include: ['react', 'react-dom', 'motion/react', 'react-use'],
+    },
+
+    ssr: {
+      noExternal: ['react-use'],
     },
   },
 
@@ -55,4 +52,14 @@ export default defineConfig({
     }),
     sitemap(),
   ],
+
+  adapter: cloudflare({
+    workerEntryPoint: {
+      path: './src/worker.ts',
+      namedExports: ['createExports'],
+    },
+    platformProxy: {
+      enabled: true,
+    },
+  }),
 });

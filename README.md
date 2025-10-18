@@ -4,15 +4,15 @@
 ## 🛠 環境構築
 開発には以下が必要です。
 
-- Node.js v22.14.0 以上
+- Node.js v22.17.1 以上
 - microCMS APIキー
 
 はじめにリポジトリをクローンし、依存関係をインストールしてください。
 
 ```sh
-git clone https://github.com/foxseedlab/vkemonight-lp.git
+git clone https://github.com/foxseedlab/vkemonight2-lp.git
 
-cd vkemonight-lp
+cd vkemonight2-lp
 
 npm install
 ```
@@ -22,6 +22,26 @@ npm install
 ```sh
 cp .env.sample .env
 ```
+
+### 本番環境用シークレットの設定
+本番環境では、機密情報を Cloudflare Workers のシークレットとして設定する必要があります。
+wrangler.jsonc に記載されていない環境変数は、以下のコマンドで設定してください。
+
+```sh
+# microCMS関連
+wrangler secret put MICROCMS_SERVICE_DOMAIN
+wrangler secret put MICROCMS_API_KEY
+
+# Google Analytics関連
+wrangler secret put PUBLIC_GOOGLE_SITE_VERIFICATION
+wrangler secret put PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID
+
+# Basic認証（必要な場合）
+wrangler secret put BASIC_AUTH_USER
+wrangler secret put BASIC_AUTH_PASSWORD
+```
+
+各コマンド実行時に、値の入力が求められます。
 
 ## 💻 コマンド
 | コマンド | 説明 |

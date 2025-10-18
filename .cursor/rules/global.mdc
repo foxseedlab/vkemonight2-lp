@@ -12,8 +12,8 @@ alwaysApply: true
 - Astro
 - React
 - Tailwind CSS
-- Framer Motion
-- Cloudflare Pages (デプロイ)
+- Motion (prev: Framer Motion)
+- Cloudflare Workers (デプロイ)
 - microCMS (CMS)
 
 ■ 実装時の注意点

@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vkemonight2-lp",
+  "compatibility_date": "2025-10-11",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./dist/_worker.js/index.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": false,
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "vkemonight2.kemoin.com",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "NODE_VERSION": "22.17.1",
+    "PUBLIC_X_URL": "https://x.com/KEMO_INTHE_DARK",
+    "PUBLIC_KOFI_URL": "https://ko-fi.com/virtualkemonight/",
+    "PUBLIC_SITE_URL": "https://vkemonight2.kemoin.com",
+    "PUBLIC_VRCHAT_GROUP_URL": "https://vrc.group/KEMOIN.4681",
+    "PUBLIC_HOW_TO_JOIN_YOUTUBE_VIDEO_ID": "8YvW7h445II"
+  }
+}
