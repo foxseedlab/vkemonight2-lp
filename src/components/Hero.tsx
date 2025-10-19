@@ -60,7 +60,7 @@ export default function Hero({ assets }: Props) {
         >
           <img
             src={assets.logos.white.url}
-            alt="バーチャルケモナイト ロゴ"
+            alt="バーチャルケモナイト2 ロゴ"
             className="w-full select-none pointer-events-none"
             draggable={false}
             width="512"
@@ -82,10 +82,10 @@ export default function Hero({ assets }: Props) {
         >
           <div>
             <span className="outlined-text-shadow-1dot5xs text-shadow-current">
-              2025.
+              2026.
             </span>
             <span className="text-xl md:text-4xl outlined-text-shadow-xs md:outlined-text-shadow-md text-shadow-current">
-              7.12
+              2.21
             </span>
             <span className="ml-2">sat</span>
           </div>
