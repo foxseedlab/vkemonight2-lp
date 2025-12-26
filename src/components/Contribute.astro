@@ -11,7 +11,7 @@ import type { Image } from '@/libs/stores/init';
 
 type Props = {
   featuredImage: Image;
-  patrons: Patron[];
+  patrons: Patron[] | null;
 };
 
 const { featuredImage, patrons } = Astro.props;
@@ -62,16 +62,18 @@ const honorific = '様';
           newTab
         />
 
-        <div class="mt-8 text-center">
-          <p class="mb-2">温かいご支援を賜りました皆様に、心より感謝申し上げます。</p>
-          <p>
-            {patrons.map((patron, index) => (
-              <span>
-                {patron.name}{patron.is_need_honorific ? honorific : ''}{index !== patrons.length - 1 ? '、' : ''}
-              </span>
-            ))}
-          </p>
-        </div>
+        {patrons && patrons.length > 0 && (
+          <div class="mt-8 text-center">
+            <p class="mb-2">温かいご支援を賜りました皆様に、心より感謝申し上げます。</p>
+            <p>
+              {patrons.map((patron, index) => (
+                <span>
+                  {patron.name}{patron.is_need_honorific ? honorific : ''}{index !== patrons.length - 1 ? '、' : ''}
+                </span>
+              ))}
+            </p>
+          </div>
+        )}
       </SectionBody>
     </div>
   </div>
