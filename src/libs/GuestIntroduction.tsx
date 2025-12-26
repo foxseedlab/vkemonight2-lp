@@ -51,6 +51,7 @@ export default function GuestIntroductions({ guests, assets }: Props) {
         >
           <GuestIntroduction
             name={guest.name}
+            organization={guest.organization}
             positions={guest.positions}
             socials={guest.social_links}
             description={guest.introduction}
@@ -65,6 +66,7 @@ export default function GuestIntroductions({ guests, assets }: Props) {
 
 function GuestIntroduction({
   name,
+  organization,
   positions,
   socials,
   description,
@@ -72,6 +74,7 @@ function GuestIntroduction({
   assets,
 }: {
   name: string;
+  organization?: string;
   positions: PositionType[];
   socials: SocialLink[];
   description: string;
@@ -97,7 +100,14 @@ function GuestIntroduction({
           />
 
           <div className="pt-10 pl-5 w-[calc(100%-8rem)]">
-            <h2 className="mb-1 text-lg font-medium">{name}</h2>
+            <div className="flex flex-row flex-wrap items-center">
+              <h2 className="mb-1 mr-2 text-lg font-medium">{name}</h2>
+              {organization && (
+                <span className="-mt-1 px-2 text-white/75 text-sm bg-white/10">
+                  {organization}
+                </span>
+              )}
+            </div>
             <Social socials={socials} assets={assets} />
             <Position className="mt-[0.6rem]" positions={positions} />
           </div>

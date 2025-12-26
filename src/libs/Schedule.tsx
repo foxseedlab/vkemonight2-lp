@@ -109,6 +109,7 @@ function DJSchedule({
               startAtStr={djSchedule.start_at}
               endAtStr={djSchedule.end_at}
               name={djSchedule.dj.name}
+              organization={djSchedule.dj.organization}
               genre={djSchedule.genre}
               avatarUrl={djSchedule.dj.avatar.url}
               vj={djSchedule.vj}
@@ -124,6 +125,7 @@ function DJ({
   startAtStr,
   endAtStr,
   name,
+  organization,
   genre,
   avatarUrl,
   vj,
@@ -131,6 +133,7 @@ function DJ({
   startAtStr: string;
   endAtStr: string;
   name: string;
+  organization?: string;
   genre: string;
   avatarUrl: string;
   vj: Person | null;
@@ -157,7 +160,14 @@ function DJ({
         <div className="text-tertiary/50 font-display outlined-text-shadow-2xs text-shadow-tertiary/10">
           {startAtHourAndMinute} - {endAtHourAndMinute}
         </div>
-        <h3 className="text-lg font-medium">{name}</h3>
+        <div className="flex flex-row items-center">
+          <h3 className="text-lg font-medium">{name}</h3>
+          {organization && (
+            <span className="-mt-0.5 ml-2 px-2 text-secondary/75 text-sm bg-secondary/10">
+              {organization}
+            </span>
+          )}
+        </div>
         <div>{genre}</div>
         {vj && (
           <div className="mt-[0.1rem]">

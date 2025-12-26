@@ -57,6 +57,7 @@ export default function SpecialGuestIntroductions({ guests, assets }: Props) {
             // biome-ignore lint/style/noNonNullAssertion: スペシャルゲストには必ずstill_photographyが存在する前提
             stillPhotographyUrl={guest.still_photography!.url}
             name={guest.name}
+            organization={guest.organization}
             positions={guest.positions}
             socials={guest.social_links}
             description={guest.introduction}
@@ -71,6 +72,7 @@ export default function SpecialGuestIntroductions({ guests, assets }: Props) {
 function SpecialGuestIntroduction({
   stillPhotographyUrl,
   name,
+  organization,
   positions,
   socials,
   description,
@@ -78,6 +80,7 @@ function SpecialGuestIntroduction({
 }: {
   stillPhotographyUrl: string;
   name: string;
+  organization?: string;
   positions: PositionType[];
   socials: SocialLink[];
   description: string;
@@ -106,7 +109,14 @@ function SpecialGuestIntroduction({
           className="p-6 pt-[32rem] md:p-10 md:pt-10 md:pl-[calc(28rem+2.5rem)] xl:pl-[calc(32rem+2.5rem)]
           w-full md:min-h-[32rem] xl:min-h-[40rem]"
         >
-          <Header2 title={name} className="mb-1" />
+          <div className="flex flex-row items-center">
+            <Header2 title={name} className="mb-1" widthFull={false} />
+            {organization && (
+              <span className="-mt-2 ml-2 px-2 text-white/75 text-xl bg-white/10">
+                {organization}
+              </span>
+            )}
+          </div>
           <Social socials={socials} assets={assets} />
           <Position className="mt-4" positions={positions} />
           <ParagraphWithLineBreak text={description} className="mt-4" />
