@@ -7,6 +7,7 @@ export type Person = {
   publishedAt: string;
   revisedAt: string;
   name: string;
+  organization?: string;
   avatar: Image;
   still_photography?: Image;
   introduction: string;
@@ -32,10 +33,13 @@ export type PositionType =
   | 'MC'
   | '照明'
   | 'バーテンダー'
-  | 'SNS運用'
-  | 'ロゴ制作'
-  | 'フライヤー制作'
-  | 'ページ制作';
+  | 'ワールド準備'
+  | '案内'
+  | 'SNS'
+  | 'ロゴ'
+  | 'フライヤー'
+  | 'Web'
+  | 'アドバイザー';
 
 export type SocialLinkType =
   | 'X'
@@ -44,8 +48,10 @@ export type SocialLinkType =
   | 'Instagram'
   | 'YouTube'
   | 'Mixcloud'
+  | 'SoundCloud'
+  | 'Twitch'
   | 'VRChat'
-  | 'Booth'
+  | 'BOOTH'
   | 'GitHub'
   | 'Linktree'
   | 'homepage';
@@ -81,6 +87,10 @@ export async function fetchGuestsWithoutSpecial(): Promise<Person[]> {
     queries: {
       filters: 'is_guest[equals]true[and]is_special_guest[equals]false',
     },
+  });
+
+  res.contents.sort((a, b) => {
+    return b.introduction.length - a.introduction.length;
   });
 
   return res.contents;
