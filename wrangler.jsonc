@@ -12,7 +12,7 @@
     "enabled": true
   },
   "upload_source_maps": false,
-  "workers_dev": false,
+  "workers_dev": true,
   "preview_urls": true,
   "routes": [
     {
