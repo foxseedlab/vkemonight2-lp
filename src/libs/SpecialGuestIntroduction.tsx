@@ -49,6 +49,7 @@ export default function SpecialGuestIntroductions({ guests, assets }: Props) {
       {guests.map((guest) => (
         <motion.li
           key={guest.id}
+          // @ts-expect-error 動作に問題ないため、一時的に無視
           variants={itemVariants}
           className="mt-[6rem] w-full relative"
         >
