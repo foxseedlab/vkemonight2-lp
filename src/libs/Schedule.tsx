@@ -160,19 +160,19 @@ function DJ({
         <div className="text-tertiary/50 font-display outlined-text-shadow-2xs text-shadow-tertiary/10">
           {startAtHourAndMinute} - {endAtHourAndMinute}
         </div>
-        <div className="flex flex-row items-center">
-          <h3 className="text-lg font-medium">{name}</h3>
-          {organization && (
-            <span className="-mt-0.5 ml-2 px-2 text-secondary/75 text-sm bg-secondary/10">
-              {organization}
-            </span>
-          )}
-        </div>
+        <h3 className="text-lg font-medium">{name}</h3>
         <div>{genre}</div>
         {vj && (
           <div className="mt-[0.1rem]">
             <span className="px-4 text-secondary/75 bg-secondary/10 rounded-lg">
               VJ: {vj.name}
+            </span>
+          </div>
+        )}
+        {organization && (
+          <div className="mt-[0.1rem]">
+            <span className="px-2 text-secondary/75 text-sm bg-secondary/10">
+              {organization}
             </span>
           </div>
         )}
