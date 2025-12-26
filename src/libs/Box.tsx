@@ -54,7 +54,7 @@ export function BeveledRectangleFigure({
       <img
         src={recommendAvatarSrc(imgSrc)}
         alt={imgAlt}
-        className="w-full h-full object-cover mask-contain"
+        className="w-full h-full object-cover mask-cover mask-no-repeat mask-center"
         style={{
           maskImage: `url("data:image/svg+xml,${createMaskImageTag(size, cornerSize)}")`,
         }}
