@@ -7,6 +7,7 @@ export type Assets = {
   revisedAt: string;
   favicon: Image;
   ogp: Image;
+  ogp_timetable: Image;
   featured_images: {
     fieldId: string;
     hero_video_url: string;
@@ -29,6 +30,8 @@ export type Assets = {
     facebook: Image;
     youtube: Image;
     mixcloud: Image;
+    soundcloud: Image;
+    twitch: Image;
     vrchat: Image;
     booth: Image;
     github: Image;
@@ -36,7 +39,7 @@ export type Assets = {
     kofi: Image;
     homepage: Image;
   };
-  patrons: Patron[];
+  patrons: Patron[] | null;
 };
 
 export type Patron = {

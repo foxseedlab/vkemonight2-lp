@@ -28,9 +28,14 @@ export default function Social({ socials, assets, className = '' }: Props) {
     ],
     ['YouTube', { url: assets.social_logos.youtube.url, height: 'h-[20px]' }],
     ['Mixcloud', { url: assets.social_logos.mixcloud.url, height: 'h-[20px]' }],
+    [
+      'SoundCloud',
+      { url: assets.social_logos.soundcloud.url, height: 'h-[40px]' },
+    ],
+    ['Twitch', { url: assets.social_logos.twitch.url, height: 'h-[22px]' }],
     ['VRChat', { url: assets.social_logos.vrchat.url, height: 'h-[20px]' }],
     ['GitHub', { url: assets.social_logos.github.url, height: 'h-[23px]' }],
-    ['Booth', { url: assets.social_logos.booth.url, height: 'h-[24px]' }],
+    ['BOOTH', { url: assets.social_logos.booth.url, height: 'h-[24px]' }],
     ['Linktree', { url: assets.social_logos.linktree.url, height: 'h-[20px]' }],
     ['homepage', { url: assets.social_logos.homepage.url, height: 'h-[28px]' }],
   ]);

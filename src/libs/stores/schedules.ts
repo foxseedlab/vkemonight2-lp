@@ -10,29 +10,19 @@ export type Schedule = {
   start_at: string;
   end_at: string;
   genre: string;
-  performer: Person;
+  dj: Person;
   vj: Person | null;
-  is_dj: boolean;
 };
-
-export async function fetchSchedules(): Promise<Schedule[]> {
-  const client = createCMSClient();
-
-  const res = await client.getList<Schedule>({
-    endpoint: 'schedules',
-  });
-
-  return res.contents;
-}
 
 export async function fetchDJSchedules(): Promise<Schedule[]> {
   const client = createCMSClient();
 
   const res = await client.getList<Schedule>({
     endpoint: 'schedules',
-    queries: {
-      filters: 'is_dj[equals]true',
-    },
+  });
+
+  res.contents.sort((a, b) => {
+    return new Date(a.start_at).getTime() - new Date(b.start_at).getTime();
   });
 
   return res.contents;

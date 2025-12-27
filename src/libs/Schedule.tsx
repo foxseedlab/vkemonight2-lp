@@ -21,9 +21,10 @@ type Props = {
 export default function Schedule({ djSchedules }: Props) {
   return (
     <ul className="mt-4 w-full half-container-max-width tracking-wide flex flex-col gap-4">
-      <NormalSchedule startAtStr="19:45" title="開場" />
+      <NormalSchedule startAtStr="19:30" title="開場" />
+      <NormalSchedule startAtStr="19:50" title="開会式" />
       <DJSchedule startAtStr="20:00" title="DJ" djSchedules={djSchedules} />
-      <NormalSchedule startAtStr="04:00" title="記念撮影" />
+      <NormalSchedule startAtStr="04:00" title="閉会式・記念撮影" />
       <NormalSchedule startAtStr="04:15" title="イベント終了" />
     </ul>
   );
@@ -107,9 +108,10 @@ function DJSchedule({
             <DJ
               startAtStr={djSchedule.start_at}
               endAtStr={djSchedule.end_at}
-              name={djSchedule.performer.name}
+              name={djSchedule.dj.name}
+              organization={djSchedule.dj.organization}
               genre={djSchedule.genre}
-              avatarUrl={djSchedule.performer.avatar.url}
+              avatarUrl={djSchedule.dj.avatar.url}
               vj={djSchedule.vj}
             />
           </motion.li>
@@ -123,6 +125,7 @@ function DJ({
   startAtStr,
   endAtStr,
   name,
+  organization,
   genre,
   avatarUrl,
   vj,
@@ -130,6 +133,7 @@ function DJ({
   startAtStr: string;
   endAtStr: string;
   name: string;
+  organization?: string;
   genre: string;
   avatarUrl: string;
   vj: Person | null;
@@ -162,6 +166,13 @@ function DJ({
           <div className="mt-[0.1rem]">
             <span className="px-4 text-secondary/75 bg-secondary/10 rounded-lg">
               VJ: {vj.name}
+            </span>
+          </div>
+        )}
+        {organization && (
+          <div className="mt-[0.1rem]">
+            <span className="px-2 text-secondary/75 text-sm bg-secondary/10">
+              {organization}
             </span>
           </div>
         )}

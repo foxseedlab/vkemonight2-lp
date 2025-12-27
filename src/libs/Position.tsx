@@ -10,13 +10,16 @@ export default function Position({ positions, className = '' }: Props) {
     ['主催', 'bg-red-700'],
     ['DJ', 'bg-violet-800'],
     ['VJ', 'bg-cyan-700'],
-    ['MC', 'bg-neutral-800'],
-    ['照明', 'bg-neutral-800'],
-    ['バーテンダー', 'bg-neutral-800'],
-    ['SNS運用', 'bg-neutral-800'],
-    ['ロゴ制作', 'bg-neutral-800'],
-    ['フライヤー制作', 'bg-neutral-800'],
-    ['ページ制作', 'bg-neutral-800'],
+    ['MC', 'bg-blue-700'],
+    ['照明', 'bg-neutral-700'],
+    ['バーテンダー', 'bg-neutral-700'],
+    ['ワールド準備', 'bg-neutral-700'],
+    ['案内', 'bg-neutral-700'],
+    ['SNS', 'bg-neutral-700'],
+    ['ロゴ', 'bg-neutral-700'],
+    ['フライヤー', 'bg-neutral-700'],
+    ['Web', 'bg-neutral-700'],
+    ['アドバイザー', 'bg-neutral-700'],
   ]);
 
   return (

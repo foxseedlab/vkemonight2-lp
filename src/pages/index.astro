@@ -20,8 +20,8 @@ import { fetchDJSchedules } from '@/libs/stores/schedules';
 
 import '@/styles/global.css';
 
-// Basic認証を有効にするために prerender を無効化
-export const prerender = false;
+// Basic認証を有効にするために prerender を無効化 // -> 有効化
+export const prerender = true;
 
 const assets = await fetchAssets();
 const specialGuests = await fetchSpecialGuests();

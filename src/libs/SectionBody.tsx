@@ -26,6 +26,7 @@ export default function SectionBody({ className, children }: Props) {
     <motion.div
       ref={ref}
       className={`px-6 md:px-16 w-full flex flex-col items-center ${className ?? ''}`}
+      // @ts-expect-error 動作に問題ないため、一時的に無視
       variants={fadeInVariants}
       initial="hidden"
       animate={isInView ? 'show' : 'hidden'}

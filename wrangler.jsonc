@@ -12,8 +12,8 @@
     "enabled": true
   },
   "upload_source_maps": false,
-  "workers_dev": false,
-  "preview_urls": false,
+  "workers_dev": true,
+  "preview_urls": true,
   "routes": [
     {
       "pattern": "vkemonight2.kemoin.com",

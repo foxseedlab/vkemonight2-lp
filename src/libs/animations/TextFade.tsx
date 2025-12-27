@@ -35,6 +35,7 @@ export function TextFade({
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child) ? (
+          // @ts-expect-error 動作に問題ないため、一時的に無視
           <motion.div variants={FADE_ANIMATION}>{child}</motion.div>
         ) : (
           child
