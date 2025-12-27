@@ -15,6 +15,7 @@ type Props = {
   xSite?: string;
   noindex?: boolean;
   nofollow?: boolean;
+  ogpImage?: string;
   assets: Assets;
   performers: Person[];
 };
@@ -25,9 +26,12 @@ const {
   xSite = '@KEMO_INTHE_DARK',
   noindex = true,
   nofollow = true,
+  ogpImage,
   assets,
   performers,
 } = Astro.props;
+
+const finalOgpImage = `${ogpImage || assets.ogp.url}?timestamp=20251227`;
 ---
 
 <!doctype html>
@@ -40,12 +44,12 @@ const {
         site: xSite,
         title,
         description,
-        image: `${assets.ogp.url}?timestamp=20251019`,
+        image: finalOgpImage,
         imageAlt: 'バーチャルケモナイト2',
         card: 'summary_large_image',
       }}
       openGraph={{
-        basic: { title, type: 'website', image: `${assets.ogp.url}?timestamp=20251227` },
+        basic: { title, type: 'website', image: finalOgpImage },
       }}
       noindex={noindex}
       nofollow={nofollow}

@@ -7,6 +7,7 @@ export type Assets = {
   revisedAt: string;
   favicon: Image;
   ogp: Image;
+  ogp_timetable: Image;
   featured_images: {
     fieldId: string;
     hero_video_url: string;
