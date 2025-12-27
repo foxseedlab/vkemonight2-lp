@@ -3,17 +3,23 @@ import BaseLayout from '@/layouts/Base.astro';
 import { fetchAssets } from '@/libs/stores/assets';
 import { fetchPerformers } from '@/libs/stores/people';
 
+// Basic認証を有効にするために prerender を無効化 // -> 有効化
 export const prerender = true;
 
 const assets = await fetchAssets();
 const performers = await fetchPerformers();
 const timetableOgpImage = assets.ogp_timetable.url;
-
-return Astro.redirect('/', 301);
 ---
 
 <BaseLayout
   assets={assets}
   performers={performers}
   ogpImage={timetableOgpImage}
-/>
+>
+  <script>
+    // Astro側でリダイレクト最適化されると、OGPが正常に表示されない
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 10);
+  </script>
+</BaseLayout>
