@@ -94,8 +94,8 @@ function SpecialGuestIntroduction({
     <>
       <div ref={ref} className="w-full h-full relative z-10">
         <figure
-          className="w-full md:w-[28rem] xl:w-[32rem] h-[36rem] md:h-[calc(100%+6rem)]
-          absolute -top-[6rem] bottom-auto md:top-auto md:bottom-0 flex flex-col items-center"
+          className="w-full min-[932px]:w-[28rem] xl:w-[32rem] h-[36rem] min-[932px]:h-[calc(100%+6rem)]
+          absolute -top-[6rem] bottom-auto min-[932px]:top-auto min-[932px]:bottom-0 flex flex-col items-center"
         >
           <img
             src={recommendStillSrc(stillPhotographyUrl)}
@@ -106,7 +106,7 @@ function SpecialGuestIntroduction({
 
         {/* 本文 */}
         <div
-          className="p-6 pt-[32rem] md:p-10 md:pt-10 md:pl-[calc(28rem+2.5rem)] xl:pl-[calc(32rem+2.5rem)]
+          className="p-6 pt-[32rem] min-[932px]:p-10 min-[932px]:pt-10 min-[932px]:pl-[calc(28rem+2.5rem)] xl:pl-[calc(32rem+2.5rem)]
           w-full md:min-h-[32rem] xl:min-h-[40rem]"
         >
           <div className="flex flex-row items-center">

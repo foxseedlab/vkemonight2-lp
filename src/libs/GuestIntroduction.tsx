@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import { motion } from 'motion/react';
 import { useMeasure } from 'react-use';
 import { BeveledRectangleBox, BeveledRectangleFigure } from './Box';
@@ -85,6 +86,8 @@ function GuestIntroduction({
   const cornerSize = 24;
   const borderWidth = 5;
 
+  const longNameLine = name.length + (organization?.length ?? 0) > 25;
+
   return (
     <div className="mt-6 w-[calc(100%-1.5rem)] relative">
       <div ref={ref} className="w-full h-full relative z-10">
@@ -100,10 +103,15 @@ function GuestIntroduction({
           />
 
           <div className="pt-10 pl-5 w-[calc(100%-8rem)]">
-            <div className="flex flex-row flex-wrap items-center">
-              <h2 className="mb-1 mr-2 text-lg font-medium">{name}</h2>
+            <div
+              className={clsx(
+                'mb-1 flex flex-row flex-wrap items-center gap-0.5',
+                longNameLine && 'mb-2',
+              )}
+            >
+              <h2 className="mr-1.5 text-lg font-medium">{name}</h2>
               {organization && (
-                <span className="-mt-1 px-2 text-white/75 text-sm bg-white/10">
+                <span className="px-2 text-white/75 text-sm bg-white/10">
                   {organization}
                 </span>
               )}
