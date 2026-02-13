@@ -61,7 +61,7 @@ export default function Hero({ assets }: Props) {
         >
           <img
             src={assets.logos.white.url}
-            alt="バーチャルケモナイト2 ロゴ"
+            alt="バーチャルケモナイト２ ロゴ"
             className="w-full select-none pointer-events-none"
             draggable={false}
             width="512"
